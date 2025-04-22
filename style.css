@@ -59,7 +59,7 @@ body {
   cursor: pointer;
   transition: filter 0.3s;
 }
-.btn-section:active {
+.btn-section button:active {
   filter: brightness(130%);
 }
 .btn-section .span-2 {
