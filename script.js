@@ -1,25 +1,37 @@
 const resultEl = document.getElementById("display");
 const expressionDisplayEl = document.getElementById("expression");
-const sarcasticEl = document.getElementById("sarcasm");
+const sarcasticDisplayEl = document.getElementById("sarcasm");
+// const clearAllData = document.getElementById("allClear");
 
 let result = "0";
-let expressionResult = "";
-let sarcasticMessage = "";
+let expressionDisplay = "";
+let sarcasmDisplay = "";
+// let clearAllAddedData = " ";
 
-const displayExpression = () => {
-  resultEl.textContent = result;
-  expressionDisplayEl.textContent = expressionResult;
-  sarcasticEl.textContent = sarcasticMessage;
+// Append operator to the display //
+const setOperator = (nextOperator) => {
+  expressionDisplay += nextOperator;
+
+  updateDisplay();
 };
-displayExpression();
 
 // Append number to the display //
 
 const appendNumber = (number) => {
-  result = result === "0" ? number : result + number;
-  expressionResult = result;
-  displayExpression();
+  // result = result === "0" ? number : result + number;
+  expressionDisplay = expressionDisplay + number;
+  updateDisplay();
 };
 
-// Append operator to the display //
-const setOpertor = () => {};
+const updateDisplay = () => {
+  resultEl.textContent = result;
+  expressionDisplayEl.textContent = expressionDisplay;
+  sarcasticDisplayEl.textContent = sarcasmDisplay;
+};
+updateDisplay();
+
+// All clear function
+
+// const clearData = () => {
+//   updateDisplay();
+// };
